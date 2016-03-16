@@ -9,7 +9,7 @@ This is the work of [Serge ARADJ](https://github.com/orty) with a little help fr
 
 
 ## How to enable it
-Once installed from the [chrome web store][1] (or locally by cloninf this repository), you'll see a new icon appearing next to chrom's menu : 
+Once installed from the [chrome web store][1] (or locally by cloning this repository), you'll see a new icon appearing next to chrom's menu : 
 this browser action is by default deactivated ![deactivated browser action](icons/icon19_disabled.png).
 
 When you __left-click__ ont his icon, you'll toggle its state.
