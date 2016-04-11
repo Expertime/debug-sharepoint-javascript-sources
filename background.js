@@ -8,7 +8,7 @@ const requestFilters = {
     '*://*.sharepoint.com/_layouts/15/*/*.js'
   ],
   'types': ['script']
-}
+};
 const keepPattern = /(\.debug|start)\.js$/;
 
 /** startup actions  */
@@ -20,7 +20,7 @@ browser.browserAction.onClicked.addListener(setEnabled);
  */
 function setEnabled() {
   // switching the actual 'enabled' flag value
-  const enabled = !(localStorage.getItem(enabledKey) == 'true');
+  const enabled = localStorage.getItem(enabledKey) != 'true';
   if (enabled) {
     // enabled -> add request listener
     browser.webRequest.onBeforeRequest.addListener(onBeforeRequestListener, requestFilters, ['blocking']);
@@ -66,5 +66,5 @@ function shouldRedirectUrl(originalUrl, redirectUrl, pattern) {
   const request = new XMLHttpRequest();
   request.open('GET', redirectUrl, false); // 'false' makes the request synchronous
   request.send(null);
-  return (request.status === 200) // if redirectUrl exists keep it, otherwise use originalUrl
+  return (request.status === 200); // if redirectUrl exists keep it, otherwise use originalUrl
 }
